@@ -1,3 +1,16 @@
+#Created by Justin Stewart
+#Github: NotBlasto
+#Program: Text-Based-DS3
+# This program This project is a reimagination of Dark Souls 3 as a choose your own adventure game. 
+# I chose to create this project as a massive fan of the series and programmer seeking practice. 
+# My hope is to provide fans of the series with a new way to experience one of their favorite storylines, while still maintaining all of the core action combat elements players have come to know and love throughout the series. 
+# The game currently only allows players access up to the High Wall of Lothric, but has provided a framework for expansion throughout all zones. Combat options include: attack, heavy attack, roll, and estus flask. 
+# Boss behavior is designed to mimic the original, with multiple phases and increasingly varying attack patterns. 
+# I do not claim any right to the names and world of Dark Souls 3 owned by FromSoftware utilized in this project. 
+# If there are any questions or concerns about the usage of any elements in this project, send me a message and I will respond promptly.
+
+
+#Necessary Imports
 import random
 import sys
 import pygame
@@ -663,18 +676,13 @@ def opensave():
     Zones.CemetaryRight = int(array[11])
     
     file.close()
-#Not in use right now as it has crashed the program when compiled and shared with other users, but does play music during boss encounter.    
-def playmusic():
-    mixer.init()
-    mixer.music.load('gundyr.mp3')
-    mixer.music.play()
 #Function to give boss souls / greater amount of souls / may also do away with this function and simply reward upon winning combat.
 def givebossSouls():
     GameState.souls = GameState.souls+3
     print('You now have:',GameState.souls, 'souls')
 #Function when player takes damage.
 def deincrementhealth():
-    GameState.health = min(GameState.health - 0, GameState.health)
+    GameState.health = min(GameState.health - 1, GameState.health)
     print('You have', GameState.health, 'health left')
     if GameState.health <= 0:
         print ('YOU DIED')
@@ -745,10 +753,7 @@ def givesouls():
     print('You now have:',GameState.souls, 'souls')
 #Not implimented, Will play intro sequence of Dark Souls 3 for worldbuilding and immersion reasons.
 def intro():
-    mixer.inti()
-    mixer.music.load('Ds3 opening.mp3')
-    mixer.music.play()
-    print("Yes, indeed. It is called Lothric, where the transitory lands of the Lords of Cinder converge. In venturing north, the pilgrims discover the truth of the old words: The fire fades and the lords go without thrones. When the link of fire is threatened, the bell tolls, unearthing the old Lords of Cinder from their graves...Aldrich, Saint of the Deep... Farron's Undead Legion, the Abyss Watchers... And the reclusive lord of the Profaned Capital, Yhorm the Giant... Only, in truth... the Lords will abandon their thrones... And the Unkindled will rise. Nameless, accursed Undead, unfit even to be cinder. And so it is, that ash seeketh embers.")
+    print("Yes, indeed. It is called Lothric...")
 #Start of game, load save, new save, weapon choice, while loop to keep game running continuously.
 answer = input('load a save? or create a new character: 1 / 2: ')
 if answer.lower().strip() == '1':
@@ -780,4 +785,3 @@ if answer.lower().strip() == '2':
         print('Not a valid selection.')
 while(1):
     Zones.Zones()
-    
