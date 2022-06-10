@@ -1,6 +1,7 @@
 #Created by Justin Stewart
 #Github: NotBlasto
 #Program: Text-Based-DS3
+#Date: 6/10/2022
 # This program This project is a reimagination of Dark Souls 3 as a choose your own adventure game. 
 # I chose to create this project as a massive fan of the series and programmer seeking practice. 
 # My hope is to provide fans of the series with a new way to experience one of their favorite storylines, while still maintaining all of the core action combat elements players have come to know and love throughout the series. 
